@@ -1,4 +1,28 @@
+/* 容器的css */
+.my-message-container {
+  position: fixed;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.my-message-container .is-top-center {
+  width: 100%;
+  top: 0;
+  left: 0;
+  align-items: center;
+}
+
 .my-message-wrapper{
   display: inline-block;
   max-width: 500px;
+}
+
+.my-message--icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 50%;
 }

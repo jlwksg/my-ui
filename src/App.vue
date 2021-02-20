@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <button @click="showToast">点击</button>
   </div>
 </template>
 
@@ -8,6 +8,11 @@
 
 export default {
   name: 'App',
+  methods: {
+    showToast(){
+      this.$message()
+    }
+  },
 }
 </script>
 

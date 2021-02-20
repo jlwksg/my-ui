@@ -1,13 +1,14 @@
 <template>
-  <transition name="my-message-fade">
-    <div class="my-message-wrapper">
+  <!-- <transition name="my-message-fade"> -->
+    <div class="my-message-wrapper" v-show="show">
+      111
       <message>
         <template slot="icon">
-          <icon :name="type"></icon>
+          <icon :name="type" class="my-message--icon"></icon>
         </template>
       </message>
     </div>
-  </transition>
+  <!-- </transition> -->
 </template>
 <script>
 import Message from './message'
@@ -16,7 +17,8 @@ export default {
   name:'Message-template',
   data() {
     return {
-      type:'info',
+      type: 'info',
+      show: true,
     }
   },
   components:{
