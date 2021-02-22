@@ -5,7 +5,7 @@ import MessageTemplate from './message-template'
 import Vue from 'vue'
 const MessageConstructor = Vue.extend(MessageTemplate)
 
-//const instances = [] //message的实例
+//const instances = [] //message的实例集合
 const containers ={} //
 
 const Message = function(){

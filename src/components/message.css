@@ -7,22 +7,70 @@
   box-sizing: border-box;
   padding: 15px;
 }
-.my-message-container .is-top-center {
+.my-message-container.is-top-center {
   width: 100%;
   top: 0;
   left: 0;
   align-items: center;
 }
-
+/* toast的css */
 .my-message-wrapper{
   display: inline-block;
   max-width: 500px;
 }
-
+.my-message-wrapper+.my-message-wrapper{
+  /* 两个相邻提示之间有15px的距离 */
+  margin-top: 15px;
+}
+.my-message-wrapper::before,
+.my-message-wrapper::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.my-message{
+  pointer-events: all;
+  display: flex;
+  padding: 10px 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+}
 .my-message--icon {
   width: 25px;
   height: 25px;
   vertical-align: middle;
   display: inline-block;
   border-radius: 50%;
+}
+
+
+/* 进出动画 */
+.my-message-fade-enter-active {
+  animation: m-message-fade-in-down 0.3s;
+}
+.my-message-fade-leave-active {
+  animation: m-message-fade-out 0.3s;
+}
+@keyframes m-message-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes m-message-fade-out {
+  0% {
+    opacity: 1;
+    margin-top: 0;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -45px;
+  }
 }
